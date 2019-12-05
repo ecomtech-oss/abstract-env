@@ -1,9 +1,9 @@
 import { Option } from 'nanoption';
 
-export function createConfig(defaults = {}) {
+export function createConfig(defaults = {}, globalVariableName = '_env_') {
   return function getValue(key) {
     // eslint-disable-next-line no-var
-    var value = (window._env_ || {})[key] || defaults[key];
+    var value = (window._env_ || {})[globalVariableName] || defaults[key];
 
     if (typeof value === 'undefined') {
       throw new Error(`Can not find configuration value for key ${key}`);
@@ -13,8 +13,11 @@ export function createConfig(defaults = {}) {
   };
 }
 
-export function createOptionalConfig(defaults = {}) {
+export function createOptionalConfig(
+  defaults = {},
+  globalVariableName = '_env_',
+) {
   return function getValue(key) {
-    return Option.of((window._env_ || {})[key] || defaults[key]);
+    return Option.of((window._env_ || {})[globalVariableName] || defaults[key]);
   };
 }

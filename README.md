@@ -71,3 +71,11 @@ const config = createConfig({
 
 const apiUrl = config('API_URL')
 ```
+
+## HowTo: Release
+
+1. Make your changes and commit it
+2. Run `yarn s release`
+3. Run `git push --follow-tags`
+4. Run `npm publish`
+5. Brilliant!

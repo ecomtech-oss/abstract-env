@@ -5,13 +5,13 @@ This in companion of [parcel-plugin-real-env](https://github.com/samokat-oss/par
 ## TL;DR
 
 ```
-yarn add @samokat/abstarct-env
+yarn add @samokat/abstract-env
 ```
 
 ```js
 // config.js
 
-import { createConfig } from '@samokat/abstarct-env'
+import { createConfig } from '@samokat/abstract-env'
 
 const config = createConfig({
   API_URL: 'fallback-for-empty-var',
@@ -31,7 +31,7 @@ Example with simple creator:
 ```js
 // config.js
 
-import { createConfig } from '@samokat/abstarct-env'
+import { createConfig } from '@samokat/abstract-env'
 
 const config = createConfig({
   API_URL: 'fallback-for-empty-var',
@@ -45,7 +45,7 @@ Example with optional creator:
 ```js
 // config.js
 
-import { createOptionalConfig } from '@samokat/abstarct-env'
+import { createOptionalConfig } from '@samokat/abstract-env'
 
 const config = createOptionalConfig({}, '_custom_variable_in_global_scope_')
 
@@ -60,7 +60,7 @@ In common project we use [Parcel](http://parceljs.org/) as bundler, and it can p
 ```js
 // config.js
 
-import { createConfig } from '@samokat/abstarct-env'
+import { createConfig } from '@samokat/abstract-env'
 
 const config = createConfig({
   // In dev mode we accept current env variable
